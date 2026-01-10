@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productivity dash board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="main-2">
+            <nav>
+                <h1>Productivity Dashboard</h1>
+                <button>change theam</button>
+            </nav>
+            <div class="daily-news">
+
+            </div>
+            <section class="all-sections">
+                <div class="to-do-list saperator" id="0">
+                    <h1>To Do List</h1>
+                </div>
+                <div class="daily-planner saperator" id="1">
+                    <h1>Daily Planner</h1>
+                </div>
+                <div class="motivation saperator" id="2">
+                    <h1>Motivation</h1>
+                </div>
+                <div class="pomodoro-timer saperator" id="3">
+                    <h1>Pomodoro Timer</h1>
+                </div>
+                <div class="daily-goals saperator" id="4">
+                    <h1>Daily Goals</h1>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="full-todolists full-elem">
+            <div class="top">
+                <h1>to-do-lists</h1>
+                <button class="back" id="0">Back</button>
+            </div>
+            <div class="bottom">
+                <div class="addTask">
+                    <form >
+                        <input id="task-input" type="text" placeholder="add task">
+                        <textarea placeholder="enter details" name="" id="" cols="30" rows="10"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" id="check">
+                            <label for="check">Mark as important</label>
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+                </div>
+                <div class="allTask">
+                    <!-- <div class="task">
+                        <div class="text">
+                            <h1>gym jao</h1>
+                            <p>lavkar utha ani gym la ja karan helth is important</p>
+                        </div>
+                        <button>mark as completed</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="full-dailyplanner full-elem">
+            <div class="top">
+                <h1>daily-planner</h1>
+                <button class="back" id="1">Back</button>
+            </div>
+
+            <div class="bottom">
+                <div class="dayplane">
+                    <p>6:00 - 7:00</p>
+                    <input type="text" placeholder="...">
+                </div>
+            </div>
+        </div>
+        <div class="full-motivation full-elem">
+            <div class="top">
+                <h1>motivation</h1>
+                <button class="back" id="2">Back</button>
+            </div>
+
+            <div class="motivation-container">
+                <div class="motivation-data">
+                    <div class="motivation-1">
+                        <h1>Quote of the day</h1>
+                        <h2>,,</h2>
+                    </div>
+                    <div class="motivation-2">
+                        <p>.......</p>
+                    </div>
+                    <div class="motivation-3">
+                        <h1>.......</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-pomodorotimer full-elem">
+            <div class="top">
+                <h1>pomodoro-timer</h1>
+                <button class="back" id="3">Back</button>
+            </div>
+        </div>
+        <div class="full-dailygoals full-elem">
+            <div class="top">
+                <h1>daily-goals</h1>
+                <button class="back" id="4">Back</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
