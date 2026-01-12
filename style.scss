@@ -354,6 +354,7 @@ body {
             gap: 1rem;
             flex-wrap: wrap;
             overflow: auto;
+            scrollbar-color: var(--sec) var(--pri);
 
             .dayplane {
                 width: 49%;
@@ -413,6 +414,7 @@ body {
                 justify-content: space-between;
                 gap: 1rem;
                 box-shadow: 0px 0px 2rem var(--qua);
+                border: 3px solid var(--pri);
 
                 .motivation-1 {
                     padding: 0.5rem;
@@ -426,7 +428,8 @@ body {
                         padding: 0.4rem;
                         border-radius: 1rem;
                     }
-                    h2{
+
+                    h2 {
                         font-size: 4rem;
                         color: var(--pri);
                         opacity: 0.8;
@@ -465,12 +468,63 @@ body {
             .motivation-data:hover {
                 box-shadow: 0px 0px 2rem var(--sec);
             }
-            .motivation-data:hover h1{
+
+            .motivation-data:hover h1 {
                 text-shadow: 0px 0px 0.5rem var(--sec);
             }
-            .motivation-data:hover h2{
+
+            .motivation-data:hover h2 {
                 text-shadow: 0px 0px 0.5rem var(--qua);
             }
         }
     }
+
+    .full-pomodorotimer {
+
+        .bottom {
+            height: 85%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                h1 {
+                    font-size: 5rem;
+                    font-weight: 600;
+                    color: var(--sec);
+                }
+
+                .but {
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
+                    button {
+                        padding: 0.5rem 1.5rem;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        border: 2px solid var(--sec);
+                        background-color: var(--tri);
+                        color: var(--sec);
+                        box-shadow: 0.5rem 0.5rem 0rem black;
+                        transition: all ease-in-out 0.1s;
+                    }
+
+                    button:active {
+                        box-shadow: 0rem 0rem 0rem black;
+                        border: 2px solid black;
+                    }
+                }
+            }
+        }
+    }
+
 }

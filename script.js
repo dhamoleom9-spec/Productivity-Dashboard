@@ -112,19 +112,91 @@ function dailyplanner() {
 }
 dailyplanner()
 
-async function motivationDataFetch(){
+async function motivationDataFetch() {
     let quote = document.querySelector('.motivation-container .motivation-data .motivation-2 p')
     let auther = document.querySelector('.motivation-container .motivation-data .motivation-3 h1')
 
     let unrealData = await fetch('https://dummyjson.com/quotes')
     let realData = await unrealData.json()
 
-    let rendomeNumber = Math.floor(Math.random()*30)
+    let rendomeNumber = Math.floor(Math.random() * 30)
 
     quote.innerHTML = realData.quotes[rendomeNumber].quote
     auther.innerHTML = realData.quotes[rendomeNumber].author
 }
 motivationDataFetch()
+
+function pomodoroTimer() {
+
+    let totalTimer = 25 * 60
+    let isworkSession = true
+
+    let timer = document.querySelector('.full-pomodorotimer .bottom .container h1')
+    let startBtn = document.querySelector('.full-pomodorotimer .bottom .container .but .Start')
+    let pauseBtn = document.querySelector('.full-pomodorotimer .bottom .container .but .pause')
+    let RestartBtn = document.querySelector('.full-pomodorotimer .bottom .container .but .Restart')
+
+
+
+    function updateTimer() {
+        let minutes = Math.floor(totalTimer / 60)
+        let seconds = totalTimer % 60
+
+        timer.innerHTML = `${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')}`
+
+    }
+
+    function startTimer() {
+
+        if (isworkSession) {
+            totalTimer = 25 * 60
+            timerPauser = setInterval(function () {
+                if (totalTimer > 0) {
+                    totalTimer--
+                    updateTimer()
+                } else {
+                    isworkSession = false
+                    clearInterval(timerPauser)
+                    timer.innerHTML = '05:00'
+                }
+            }, 1000)
+        } else {
+            totalTimer = 5 * 60
+            timerPauser = setInterval(function () {
+                if (totalTimer > 0) {
+                    totalTimer--
+                    updateTimer()
+                } else {
+                    isworkSession = true
+                    clearInterval(timerPauser)
+                    timer.innerHTML = '25:00'
+                }
+            }, 1000)
+        }
+    }
+
+    function stopstarttimer() {
+        clearInterval(timerPauser)
+        timerPauser = null;
+    }
+
+    function resettimer() {
+        clearInterval(timerPauser)
+        timerPauser = null;
+        totalTimer = 25 * 60
+        updateTimer()
+    }
+
+    startBtn.addEventListener('click', startTimer)
+    pauseBtn.addEventListener('click', stopstarttimer)
+    RestartBtn.addEventListener('click', resettimer)
+
+
+
+
+}
+pomodoroTimer()
+
 
 
 

@@ -310,6 +310,7 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
   overflow: auto;
+  scrollbar-color: var(--sec) var(--pri);
 }
 .main .full-dailyplanner .bottom .dayplane {
   width: 49%;
@@ -360,6 +361,7 @@ body {
   justify-content: space-between;
   gap: 1rem;
   box-shadow: 0px 0px 2rem var(--qua);
+  border: 3px solid var(--pri);
 }
 .main .full-motivation .motivation-container .motivation-data .motivation-1 {
   padding: 0.5rem;
@@ -410,4 +412,42 @@ body {
 }
 .main .full-motivation .motivation-container .motivation-data:hover h2 {
   text-shadow: 0px 0px 0.5rem var(--qua);
+}
+.main .full-pomodorotimer .bottom {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main .full-pomodorotimer .bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main .full-pomodorotimer .bottom .container h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  color: var(--sec);
+}
+.main .full-pomodorotimer .bottom .container .but {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.main .full-pomodorotimer .bottom .container .but button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 2px solid var(--sec);
+  background-color: var(--tri);
+  color: var(--sec);
+  box-shadow: 0.5rem 0.5rem 0rem black;
+  transition: all ease-in-out 0.1s;
+}
+.main .full-pomodorotimer .bottom .container .but button:active {
+  box-shadow: 0rem 0rem 0rem black;
+  border: 2px solid black;
 }/*# sourceMappingURL=style.css.map */
