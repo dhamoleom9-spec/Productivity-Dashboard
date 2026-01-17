@@ -197,6 +197,91 @@ function pomodoroTimer() {
 }
 pomodoroTimer()
 
+function weatherFunctionality() {
+
+    let temp = document.querySelector('.daily-news .right h2')
+    let tempDescription = document.querySelector('.daily-news .right #one')
+    let tempHumidity = document.querySelector('.daily-news .right #three')
+    let tempWind = document.querySelector('.daily-news .right #four')
+    let time = document.querySelector('.daily-news .left h1')
+    let newdate = document.querySelector('.daily-news .left h3')
+    let cityweather = document.querySelector('.daily-news .left h2')
+    let city = 'Khamgaon'
+    async function Weather() {
+        let = apikey = "8bf45140fa37195f00fb876af0b93e59";
+        let rawdata = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`);
+        let data = await rawdata.json()
+        temp.innerHTML = `${Math.floor(data.main.temp - 277)} °C`
+        tempDescription.innerHTML = `${data.weather[0].description}`
+        tempHumidity.innerHTML = `Humidity: ${data.main.humidity} %`
+        tempWind.innerHTML = `Wind: ${data.wind.speed} Km/Hr`
+        cityweather.innerHTML = `${data.name}`
+
+    }
+    Weather()
+
+    function timeDate() {
+        const totalDaysofWeek = ['Sunday', 'Monday', 'Tuesday', 'wednesday', 'Thursday', 'Friday', 'Saturday']
+        let date = new Date()
+        let dayofWeek = totalDaysofWeek[date.getDay()]
+        let hours = date.getHours()
+        let minute = date.getMinutes()
+        let seconds = date.getSeconds()
+        let day = date.getDate()
+        let month = date.getMonth()
+        let year = date.getFullYear()
+
+        newdate.innerHTML = `${day}-${String(month + 1).padStart('2', '0')}-${year}`
+
+        if (hours > 12) {
+            time.innerHTML = `${dayofWeek}, ${hours - 12}:${String(minute).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+        } else {
+            time.innerHTML = `${dayofWeek}, ${hours}:${String(minute).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+        }
+    }
+    setInterval(() => {
+        timeDate()
+    }, 1000);
+}
+weatherFunctionality()
+
+
+let but = document.querySelector('.main-2 .but')
+let rootElement = document.documentElement
+let flag = 0
+but.addEventListener('click', function () {
+    if (flag == 0) {
+        rootElement.style.setProperty('--pri', '#1B3C53')
+        rootElement.style.setProperty('--sec', '#F63049')
+        rootElement.style.setProperty('--tri', '#456882')
+        rootElement.style.setProperty('--qua', '#E3E3E3')
+        flag = 1
+    } else if (flag == 1) {
+        rootElement.style.setProperty('--pri', '#4E1F00')
+        rootElement.style.setProperty('--sec', '#FEBA17')
+        rootElement.style.setProperty('--tri', '#74512D')
+        rootElement.style.setProperty('--qua', '#F8F4E1')
+        flag = 2
+    } else if (flag == 2) {
+        rootElement.style.setProperty('--pri', '#36656B')
+        rootElement.style.setProperty('--sec', '#DAD887')
+        rootElement.style.setProperty('--tri', '#75B06F')
+        rootElement.style.setProperty('--qua', '#F0F8A4')
+        flag = 3
+    }else if(flag == 3){
+        rootElement.style.setProperty('--pri', '#E2852E')
+        rootElement.style.setProperty('--sec', '#7B542F')
+        rootElement.style.setProperty('--tri', '#F5C857')
+        rootElement.style.setProperty('--qua', '#FFEE91')
+        flag = 0
+    }else{
+        rootElement.style.setProperty('--pri', '#4E1F00')
+        rootElement.style.setProperty('--tri', '#74512D')
+        rootElement.style.setProperty('--qua', '#F8F4E1')
+    }
+})
+
+
 
 
 
