@@ -221,7 +221,7 @@ body {
   height: 100%;
   width: 42%;
   border-radius: 1rem;
-  background-color: #74512D;
+  background-color: var(--tri);
   padding: 2rem;
 }
 .main .full-todolists .bottom .addTask form {
@@ -277,7 +277,7 @@ body {
   height: 100%;
   width: 55%;
   border-radius: 1rem;
-  background-color: #74512D;
+  background-color: var(--tri);
   padding: 2rem;
   display: flex;
   flex-direction: column;
